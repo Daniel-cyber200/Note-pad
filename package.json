@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "nodemon --watch src --ext ts --exec \"npx tsc && node dist/index.js\"",
+    "watch": "tsc --watch",
+    "dev": "nodemon dist/server.js",
     "start": "node src/server.ts"
   },
   "keywords": [],
@@ -14,6 +15,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^26.6.6",
     "nodemon": "^3.1.14",
     "typescript": "^7.0.2"

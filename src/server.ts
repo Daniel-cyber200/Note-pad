@@ -1,8 +1,8 @@
-// const express = require('express');
+
 import express from "express";
-// const fs = require('fs');
+
 import fs from "fs";
-// const path = require('path');
+
 import path from "path"
 
 const app = express();
@@ -29,13 +29,13 @@ function writeNotes(notes: string) {
 // --- ROUTES ---
 
 // 1. VIEW ALL NOTES (GET /notes)
-app.get('/notes', (req: request, res: response) => {
+app.get('/notes', (req, res) => {
   const notes = readNotes();
   res.status(200).json(notes);
 });
 
 // 2. CREATE A NEW NOTE (POST /notes)
-app.post('/notes', (req: request, res: response) => {
+app.post('/notes', (req, res) => {
   const { title, content } = req.body;
 
   // Basic validation

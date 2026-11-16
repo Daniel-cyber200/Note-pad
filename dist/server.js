@@ -1,8 +1,5 @@
-// const express = require('express');
 import express from "express";
-// const fs = require('fs');
 import fs from "fs";
-// const path = require('path');
 import path from "path";
 const app = express();
 const PORT = 3000;
