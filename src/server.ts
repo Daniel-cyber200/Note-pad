@@ -5,6 +5,8 @@ import fs from "fs";
 
 import path from "path"
 
+import type {Request, Response} from "express";
+
 const app = express();
 const PORT = 3000;
 
@@ -29,13 +31,13 @@ function writeNotes(notes: string) {
 // --- ROUTES ---
 
 // 1. VIEW ALL NOTES (GET /notes)
-app.get('/notes', (req, res) => {
+app.get('/notes', (req: Request, res: Response) => {
   const notes = readNotes();
   res.status(200).json(notes);
 });
 
 // 2. CREATE A NEW NOTE (POST /notes)
-app.post('/notes', (req, res) => {
+app.post('/notes', (req: Request, res: Response) => {
   const { title, content } = req.body;
 
   // Basic validation
